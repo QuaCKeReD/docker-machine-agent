@@ -15,7 +15,12 @@ MA_PROPERTIES+=" -Dappdynamics.agent.accountAccessKey=${APPD_ACCESS_KEY}"
 MA_PROPERTIES+=" -Dappdynamics.machine.agent.hierarchyPath=${APPD_HIERARCHYPATH}"
 MA_PROPERTIES+=" -Dappdynamics.agent.uniqueHostId=${APPD_UNIQUEHOSTID}"
 
-MA_PROPERTIES+=" -Dappdynamics.sim.enabled=true"
+MA_PROPERTIES+=" -Dappdynamics.http.proxyHost=${APPD_PROXYHOST}"
+MA_PROPERTIES+=" -Dappdynamics.http.proxyPort=${APPD_PROXYPORT}"
+MA_PROPERTIES+=" -Dappdynamics.https.proxyHost=${APPD_PROXYHOST}"
+MA_PROPERTIES+=" -Dappdynamics.https.proxyPort=${APPD_PROXYPORT}"
+
+MA_PROPERTIES+=" -Dappdynamics.sim.enabled=true -Dappdynamics.agent.maxMetrics=100000"
 
 # Start Machine Agent
 ${MACHINE_AGENT_HOME}/jre/bin/java ${MA_PROPERTIES} -jar ${MACHINE_AGENT_HOME}/machineagent.jar

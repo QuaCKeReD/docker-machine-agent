@@ -11,6 +11,8 @@ services:
       - APPD_SSL_ENABLED=true
       - APPD_ACCOUNT_NAME=<accountName>
       - APPD_ACCESS_KEY=<accessKey>
+      - APPD_PROXYHOST=<proxyHost>
+      - APPD_PROXYPORT=<proxyPort>
       - APPD_HIERARCHYPATH=<metricBrowserPrefix>
       - APPD_UNIQUEHOSTID=<awsAccountName>
     volumes:
