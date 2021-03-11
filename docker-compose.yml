@@ -6,11 +6,13 @@ services:
     container_name: docker-machine-agent
     image: appdynamics/docker-machine-agent
     environment:
-      - APPD_HOST=
-      - APPD_PORT=
-      - APPD_ACCOUNT_NAME=
-      - APPD_ACCESS_KEY=
-      - APPD_SSL_ENABLED=
+      - APPD_HOST=<controllerURL>
+      - APPD_PORT=443
+      - APPD_SSL_ENABLED=true
+      - APPD_ACCOUNT_NAME=<accountName>
+      - APPD_ACCESS_KEY=<accessKey>
+      - APPD_HIERARCHYPATH=<metricBrowserPrefix>
+      - APPD_UNIQUEHOSTID=<awsAccountName>
     volumes:
-      - /:/hostroot:ro
-      - /var/run/docker.sock:/var/run/docker.sock
+      - ./monitors:/opt/appdynamics/machine-agent/monitors
+
